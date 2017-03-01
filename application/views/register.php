@@ -74,7 +74,7 @@
 								</div>
 							</div>
 							<div class="col-md-6">
-							
+							<!--
 								<div class="form-group">
 									<input type="text" name="npwp" class="form-control" placeholder="NPWP" required>
 									<i class="fa fa-toggle-down" aria-hidden="true"></i>
@@ -98,8 +98,8 @@
 									</select>
 									<i class="fa fa-envelope" aria-hidden="true"></i>
 								</div>
+								-->
 								
-								<!--
 								<div class="form-group">
 									<select class="form-control" placeholder="Status" name="status">
 										<option disabled>Choose Status</option>
@@ -109,7 +109,7 @@
 									</select>
 									<i class="fa fa-user" aria-hidden="true"></i>
 								</div>
-								-->
+								
 								<div class="form-group">
 									<!--<input type="text" name="address" class="form-control" placeholder="Address" required>-->
 									<textarea class="form-control" placeholder="Address" name="address"></textarea>

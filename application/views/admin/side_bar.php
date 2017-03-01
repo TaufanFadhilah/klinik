@@ -34,8 +34,8 @@
                     </li>
 					
 					<li>
-                        <a href="index.html">
-							<i class="di di-welcome-write-blog"></i> <span class="nav-text">Transaksi</span>
+                        <a href="<?php echo base_url(); ?>index.php/registrasi/">
+							<i class="di di-welcome-write-blog"></i> <span class="nav-text">Registrasi</span>
 						</a>
                     </li>
 					

@@ -28,54 +28,36 @@
     
     <div class="wrapper has-footer">
         
-        <!-- START : HEADER -->
-		<?php include('header.php'); ?>
-		<!-- END : HEADER -->
-        
-        <?php include('side_bar.php'); ?>
         
         <div class="main-container">    <!-- START: Main Container -->
             
-            <div class="page-header">
-                <h1>Dashboard <small>Welcome back <span class="text-primary"><?php echo $this->session->userdata('name'); ?></span></small></h1>
-                <ol class="breadcrumb">
-                    <li><a href="index.php">Home</a></li>
-                    <li class="active">Dashboard</li>
-                </ol>
-            </div>
-            
             <div class="content-wrap">  <!--START: Content Wrap-->
-                
-                <!-- Content Here! -->
-				
-				<?php
-				switch($this->uri->segment(1)){
-					case "jadwal":
-					if($this->uri->segment(2)=="input"){
-						echo "null";
-					}else{
-						include('jadwal.php');
-					}
-					break;
-					
-					case "registrasi":
-					if($this->uri->segment(2)=="input"){
-						include('input_registrasi.php');
-					}else{
-						include('registrasi.php');
-					}
-					break;
-					break;
-				}
-				?>
+                <table class="table table-bordered table-dataTable">
+					<thead>
+						<tr>
+							<th>ID Patient</th>
+							<th>Patient Name</th>
+							<th>Gender</th>
+							<th>Address</th>
+							<th>Phone</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach($patient as $data){ ?>
+						<tr>
+							<td><?php echo $data['idpatient'];?></td>
+							<td><?php echo $data['patientname'];?></td>
+							<td><?php echo $data['gender'];?></td>
+							<td><?php echo $data['address'];?></td>
+							<td><?php echo $data['phone'];?></td>
+						</tr>
+						<?php } ?>
+					</tbody>
+				</table>
                 
             </div>  <!--END: Content Wrap-->
             
         </div>  <!-- END: Main Container -->
-        
-        <footer class="footer"> <!-- START: Footer -->
-            &copy; 2016 <b>Big Ben</b> Admin
-        </footer>   <!-- END: Footer -->
         
     </div>  <!-- END: wrapper -->
 

@@ -24,14 +24,6 @@ class login extends CI_Controller {
 	}
 	
 	public function do_register(){
-		//insert to tb_user
-		$this->MyModel->insert('user',array(
-		'username' => $_POST['username'],
-		'password' => md5($_POST['password']),
-		'usertype' => 4
-		));
-		
-		$id = $this->MyModel->select_where('user',array('username' => $_POST['username']))->row();
 		//config photo
 		$config['upload_path']          = './assets/images/user_profile/';
 		$config['allowed_types']        = 'gif|jpg|png|gif';
@@ -41,7 +33,18 @@ class login extends CI_Controller {
 		$this->upload->do_upload('photo');
 		$file_name = $this->upload->data();
 		
-		//insert to tb_user_detail
+		if($_POST['status'] == "4"){
+			
+			//insert to tb_user
+		$this->MyModel->insert('user',array(
+		'username' => $_POST['username'],
+		'password' => md5($_POST['password']),
+		'usertype' => $_POST['status']
+		));
+		
+		$id = $this->MyModel->select_where('user',array('username' => $_POST['username']))->row();
+			
+			//insert to tb_user_detail
 		$this->MyModel->insert('user_detail',array(
 		'iduser' => $id->iduser,
 		'name' => $_POST['name'],
@@ -49,10 +52,20 @@ class login extends CI_Controller {
 		'phone' => $_POST['phone'],
 		'address' => $_POST['address'],
 		'photo' => $file_name['file_name'],
-		'npwp' => $_POST['npwp'],
-		'idptkp' => $_POST['ptkp'],
-		'idsalary_type' => $_POST['degree']
+		//'npwp' => $_POST['npwp'],
+		'idptkp' => "TK/0", //$_POST['ptkp'],
+		'idsalary_type' => 1 //$_POST['degree']
 		));
+		}else{
+			$this->MyModel->insert('patient',array(
+			'name' => $_POST['name'],
+			'gender' => $_POST['gender'],
+			//'bod' =>
+			'address' => $_POST['address'],
+			'phone' => $_POST['phone']
+			));
+		}
+		
 		$this->session->set_flashdata('status', 'Register Success');//flashdata
 		redirect(base_url().'index.php/login');
 	}
@@ -62,6 +75,7 @@ class login extends CI_Controller {
 		if($user_data->password == md5($_POST['password'])){
 			$user_detail = $this->MyModel->select_where('user_detail',array('iduser' => $user_data->iduser))->row();
 			$session_data = array(
+			'iduser' => $user_data->iduser,
 			'username' => $user_data->username,
 			'status' => $user_data->usertype,
 			'name' => $user_detail->name,
