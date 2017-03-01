@@ -28,7 +28,7 @@
                     </li>
                     
 					<li>
-                        <a href="index.html">
+                        <a href="<?php echo base_url(); ?>index.php/jadwal/">
 							<i class="di di-calendar"></i> <span class="nav-text">Jadwal</span>
 						</a>
                     </li>

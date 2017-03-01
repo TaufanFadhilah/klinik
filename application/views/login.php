@@ -29,19 +29,20 @@
     <div class="login animated flipInY" id="logindiv">   
         <div class="text-center logo">
             <img src="<?php echo base_url(); ?>assets/images/logo-c.svg" alt="logo">
+			<h3><?php echo $this->session->flashdata('status'); ?></h3>
         </div>
 
-        <form role="form" class="loginForm">
+        <form role="form" class="loginForm" action="<?php echo base_url(); ?>index.php/login/do_login" method="post">
 
             <div class="form-group">
                 <div class="input-icon">
-                    <input type="email" class="form-control" name="lgn_email" placeholder="email@example.com">
+                    <input type="text" class="form-control" name="username" placeholder="Username">
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="input-icon">
-                    <input type="password" class="form-control" name="lgn_pwd" placeholder="Password">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
             </div>                        
 
@@ -55,7 +56,7 @@
             </div>
             
             <div class="clearfix mt-md">
-                If you don't have an account <a href="<?php base_url() ?>login/register" class="lnkRegister">Register</a> here
+                If you don't have an account <a href="<?php echo base_url() ?>index.php/login/register" class="lnkRegister">Register</a> here
             </div>
         </form>
 
@@ -66,8 +67,9 @@
     <div class="login animated flipInY" id="forgotDiv">  
         <div class="text-center logo">
             <img src="<?php echo base_url(); ?>assets/images/logo-c.svg" alt="logo">
-        </div>
 
+        </div>
+		<1
         <form role="form" class="ForgotForm">
 
             <div class="clearfix">

@@ -24,90 +24,112 @@
 </head>
 
 <body>
-
     <div class="container">
         
         <div class="animatedParent">
             <div class="row">
                 
-                <div class="col-md-6 col-sm-6 hidden-xs">
-                    
-                    <h3 class="sign animated flipInX">Take it all of with you and we</h3>
-                    <p class="small animated flipInX">Smart device and pick up every where our service.</p>
-                    
-                    <div class='slider'>
-                        <div class='slide1'></div>
-                        <div class='slide2'></div>
-                        <div class='slide3'></div>
-                        <div class='slide4'></div>
-                    </div>
-                    
-                    <h3 class="sign animated flipInX">One account give all service</h3>
-                    <p class="small animated flipInX">you can connect with us.</p>
-                    
-                    <ul class="list-inline social">
-                        <li><a href="#"><i class="fa fa-facebook hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest-p hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-skype hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-wordpress hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-vimeo hvr-buzz-out" aria-hidden="true"></i></a></li>
-                    </ul>
-                    
-                    <ul class="list-inline text-center">
-                        <li><a href="#"><img src="<?php echo base_url(); ?>assets/images/appstore.png" class="img-responsive app"></a></li>
-                        <li><a href="#"><img src="<?php echo base_url(); ?>assets/images/googleplay.png" class="img-responsive app"></a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-xs-12 col-md-4 col-sm-6 col-lg-4">
+                <div class="col-xs-12 col-md-8 col-sm-8 col-lg-8 col-md-offset-2 col-sm-offset-2">
                     
                     <div class="blue-line sm normal"></div>
                     
                     <div class="signup-box">
                         <div class="logo"><img src="<?php echo base_url(); ?>assets/images/logo-c.svg" alt="" style="height: 40px;"></div>
                         
-                        <form>
+                        <form action="<?php echo base_url(); ?>index.php/login/do_register" method="post" enctype="multipart/form-data">
                             
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control" placeholder="Email">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="text" name="User Name" class="form-control" placeholder="User Name">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="password" name="password" class="form-control" placeholder="Password">
-                                <i class="fa fa-lock" aria-hidden="true"></i>
-                            </div>
-                            
-                            <div class="checkbox checkbox-primary">
-                                <input id="agree" class="styled" type="checkbox" checked>
-                                <label for="agree"> I agree to the account <a href="#">Terms</a> & <a href="#">Privacy</a>.</label>
-                            </div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" name="name" class="form-control" placeholder="Name" required>
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</div>
+								
+								<div class="form-group">
+									<input type="text" name="username" class="form-control" placeholder="Username" required>
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</div>
+								
+								<div class="form-group">
+									<input type="password" name="password" class="form-control" placeholder="Password"required>
+									<i class="fa fa-lock" aria-hidden="true"></i>
+								</div>
+								
+								<div class="form-group">
+								<label><i class="fa fa-venus-mars" aria-hidden="true"></i>Gender : </label>
+									<div class="radio-inline">
+									  <label>
+										<input type="radio" name="gender" id="optionsRadios1" value="L" checked>Male
+									  </label>
+									</div>
+									<div class="radio-inline">
+									  <label>
+										<input type="radio" name="gender" id="optionsRadios2" value="P">Female
+									  </label>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<input type="text" name="phone" class="form-control" placeholder="Phone" required>
+									<i class="fa fa-phone-square" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="col-md-6">
+							
+								<div class="form-group">
+									<input type="text" name="npwp" class="form-control" placeholder="NPWP" required>
+									<i class="fa fa-toggle-down" aria-hidden="true"></i>
+								</div>
+								
+								<div class="form-group">
+									<select class="form-control" placeholder="PTKP" name="ptkp">
+										<option disabled>Choose PTKP</option>
+										<?php foreach($PTKP as $data){ ?>
+										<option value="<?php echo $data['idptkp']; ?>"><?php echo $data['name_status']; ?></option>
+										<?php }?>
+									</select>
+									<i class="fa fa-toggle-down" aria-hidden="true"></i>
+								</div>
+								<div class="form-group">
+									<select class="form-control" placeholder="Degree" name="degree">
+										<option disabled>Choose Degree</option>
+										<?php foreach($degree as $data){ ?>
+										<option value="<?php echo $data['idsalary_type']; ?>"><?php echo $data['salaryname']; ?></option>
+										<?php }?>
+									</select>
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</div>
+								
+								<!--
+								<div class="form-group">
+									<select class="form-control" placeholder="Status" name="status">
+										<option disabled>Choose Status</option>
+										<option value="5">Patient</option>
+										<option value="4">Employee</option>
+										
+									</select>
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</div>
+								-->
+								<div class="form-group">
+									<!--<input type="text" name="address" class="form-control" placeholder="Address" required>-->
+									<textarea class="form-control" placeholder="Address" name="address"></textarea>
+									<i class="fa fa-toggle-down" aria-hidden="true"></i>
+								</div>
+								
+								<div class="form-group">
+									<input type="file" name="photo" class="form-control" placeholder="Photo" required>
+									<i class="fa fa-camera" aria-hidden="true"></i>
+								</div>
+							</div>
                             
                             <button href="#" type="submit" class="btn btn-primary btn-block">Create account</button>
 
                         </form>
-                        
-                        <ul class="list-inline text-center social-signup">
-                            <li>
-                                <a class="btn btn-social btn-facebook" href="#"><span class="fa fa-facebook"></span>Login Facebook</a>
-                            </li>
-                            <li>
-                                <a class="btn btn-social btn-linkedin" href="#"><span class="fa fa-linkedin"></span>Login LinkedIn</a>
-                            </li>
-                        </ul>
                     </div>
                     
                     <br>
                     <div class="signup-box">
-                        <p class="signac animated flipInX">If you have an account? <a href="user-login.html">Sign in</a></p>
+                        <p class="signac animated flipInX">If you have an account? <a href="<?php echo base_url(); ?>index.php/login">Sign in</a></p>
                     </div>
                     
                     <div class="blue-line lg normal"></div>
