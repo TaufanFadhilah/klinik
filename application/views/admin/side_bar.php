@@ -1,0 +1,68 @@
+<aside class="side-navigation-wrap sidebar-fixed">  <!-- START: Side Navigation -->
+            <div class="sidenav-inner">
+                
+                <ul class="side-nav magic-nav">
+                    
+                    <li class="side-nav-header">Navigation</li>
+					
+                    <li class="has-submenu">
+                        <a href="#submenuMaster" data-toggle="collapse" aria-expanded="false">
+                            <i class="sli-docs"></i> 
+                            <span class="nav-text">Master Data</span>
+                        </a>
+                        <div class="sub-menu collapse secondary" id="submenuMaster">
+                            <ul>
+                                <li><a href="page-blank.html">Chart of Account</a></li>
+                                <li><a href="page-search.html">Data Karyawan</a></li>
+                                <li><a href="page-404.html">Data Psikolog</a></li>
+                                <li><a href="page-500.html">Data Pasien</a></li>
+                                <li><a href="page-invoice.html">Data PTKP</a></li>
+                            </ul>
+                        </div>
+                    </li>
+					
+					<li>
+                        <a href="index.html">
+							<i class="di di-desktop"></i> <span class="nav-text">Kehadiran</span>
+						</a>
+                    </li>
+                    
+					<li>
+                        <a href="index.html">
+							<i class="di di-calendar"></i> <span class="nav-text">Jadwal</span>
+						</a>
+                    </li>
+					
+					<li>
+                        <a href="index.html">
+							<i class="di di-welcome-write-blog"></i> <span class="nav-text">Transaksi</span>
+						</a>
+                    </li>
+					
+					<li>
+                        <a href="index.html">
+							<i class="di di-desktop"></i> <span class="nav-text">Penggajian</span>
+						</a>
+                    </li>
+					
+					<li class="has-submenu">
+                        <a href="#submenuLaporan" data-toggle="collapse" aria-expanded="false">
+                            <i class="di di-admin-tools"></i> 
+                            <span class="nav-text">Laporan</span>
+                        </a>
+                        <div class="sub-menu collapse secondary" id="submenuLaporan">
+                            <ul>
+                                <li><a href="page-blank.html">Chart of Account</a></li>
+                                <li><a href="page-search.html">Data Karyawan</a></li>
+                                <li><a href="page-404.html">Data Psikolog</a></li>
+                                <li><a href="page-500.html">Data Pasien</a></li>
+                                <li><a href="page-invoice.html">Data PTKP</a></li>
+                            </ul>
+                        </div>
+                    </li>
+					
+                </ul>
+                
+            </div><!-- END: sidebar-inner -->
+            
+        </aside>    <!-- END: Side Navigation -->
