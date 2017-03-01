@@ -20,13 +20,27 @@
                             </ul>
                         </div>
                     </li>
-					
+					<!--
 					<li>
-                        <a href="index.html">
+                        <a href="<?php echo base_url(); ?>index.php/kehadiran/">
 							<i class="di di-desktop"></i> <span class="nav-text">Kehadiran</span>
 						</a>
                     </li>
-                    
+                    -->
+					
+					<li class="has-submenu">
+                        <a href="#submenuAbsen" data-toggle="collapse" aria-expanded="false">
+                            <i class="di di-desktop"></i> 
+                            <span class="nav-text">Absen</span>
+                        </a>
+                        <div class="sub-menu collapse secondary" id="submenuAbsen">
+                            <ul>
+                                <li><a href="<?php echo base_url(); ?>index.php/kehadiran/">Konfirmasi Absen</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/kehadiran/rekap_kehadiran">Rekap Absen</a></li>
+                            </ul>
+                        </div>
+                    </li>
+					
 					<li>
                         <a href="<?php echo base_url(); ?>index.php/jadwal/">
 							<i class="di di-calendar"></i> <span class="nav-text">Jadwal</span>

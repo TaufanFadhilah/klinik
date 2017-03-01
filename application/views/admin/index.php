@@ -65,6 +65,13 @@
 						include('registrasi.php');
 					}
 					break;
+					
+					case "kehadiran":
+					if($this->uri->segment(2)=="rekap_kehadiran"){
+						include('rekap_kehadiran.php');
+					}else{
+						include('kehadiran.php');
+					}
 					break;
 				}
 				?>
@@ -84,25 +91,25 @@
     <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/lib/plugins.js"></script>
     
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/flot/excanvas.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/flot/jquery.flot.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/flot/jquery.flot.tooltip.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/flot/jquery.flot.resize.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/flot/jquery.flot.crosshair.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/flot/jquery.flot.pie.min.js"></script>
+    
     <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/lib/sparklines.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/lib/jquery.knob.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/monthly/js/monthly.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/emojionearea/emojionearea.min.js"></script>
 
+	<script type="text/javascript" src="<?php echo base_url();?>assets/plugins/datatable/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/datatable/dataTables.bootstrap.min.js"></script>
+	
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/app.base.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/cmp-todo.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>assets/js/page-dashboard.js"></script>
-	
-	<script type="text/javascript" src="<?php echo base_url();?>assets/plugins/lib/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/lib/plugins.js"></script>
-    
-    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/datatable/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/datatable/dataTables.bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="<?php echo base_url();?>assets/js/app.base.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/page-table.js"></script>
+
     <script>
         jQuery(document).ready(function () {
             DataTableBasic.init();

@@ -47,51 +47,24 @@
                             <i class="ti-align-left"></i>
                         </a>
                     </li>
-                    
+					<!--
                     <li class="dropdown">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="sli-bell"></i>
                             <div class="new-alert active"></div>
                         </a>
                         <ul class="dropdown-menu dropdown-lg list-group-dropdown">
-                            <li class="no-link">4 New Notifications</li>
                             <li>
                                 <a href="#">
                                     <div class="user-list-wrap">
                                         <div class="profile-pic profile-icon"><i class="ti-file"></i></div>
                                         <div class="detail">
                                             <span class="text-normal">Ricky Palmer</span>
-                                            <span class="time">3 hrs ago</span>
-                                            <p class="font-11 no-m-b text-overflow">Sent you a file</p>
+                                            <p class="font-11 no-m-b text-overflow">Absent</p>
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <div class="user-list-wrap">
-                                        <div class="profile-pic profile-icon"><i class="ti-email"></i></div>
-                                        <div class="detail">
-                                            <span class="text-normal">Charles Dockery</span>
-                                            <span class="time">Jun 03, 2015</span>
-                                            <p class="font-11 no-m-b text-overflow">Sent you a message</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="user-list-wrap">
-                                        <div class="profile-pic profile-icon"><i class="ti-shopping-cart-full"></i></div>
-                                        <div class="detail">
-                                            <span class="text-normal">Kimberly Crouch</span>
-                                            <span class="time">May 17, 2015</span>
-                                            <p class="font-11 no-m-b text-overflow">Purchased your item</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li><a href="#" class="text-center">See all</a></li>
                         </ul>
                     </li>
                     
@@ -159,7 +132,7 @@
                             <li><a href="#" class="text-center">See all</a></li>
                         </ul>
                     </li>
-
+					-->
                 </ul>
                 
                 <ul class="nav navbar-nav navbar-right">

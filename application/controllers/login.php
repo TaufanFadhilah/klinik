@@ -52,7 +52,7 @@ class login extends CI_Controller {
 		'phone' => $_POST['phone'],
 		'address' => $_POST['address'],
 		'photo' => $file_name['file_name'],
-		//'npwp' => $_POST['npwp'],
+		'npwp' => rand(),//$_POST['npwp'],
 		'idptkp' => "TK/0", //$_POST['ptkp'],
 		'idsalary_type' => 1 //$_POST['degree']
 		));
