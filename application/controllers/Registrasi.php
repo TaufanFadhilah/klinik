@@ -32,5 +32,10 @@ class registrasi extends CI_Controller {
 		$this->session->set_flashdata('status', 'Insert Success');//flashdata
 		redirect(base_url().'index.php/registrasi');
 	}
+	
+	public function registrasi_list(){
+		$data['registrasi'] = $this->MyModel->select_registration_list()->result_array();
+		$this->load->view('admin/registrasi_list',array('registrasi' => $data['registrasi']));
+	}
 }
 ?>

@@ -20,6 +20,16 @@
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/datatable/dataTables.bootstrap.min.css">
 	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/date-picker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/dateTime-picker/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/customselect/customselect.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/jasny-bootstrap/css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/emojionearea/emojionearea.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/timepicker/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/plugins/colorpicker/css/bootstrap-colorpicker.min.css">
+	
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style-default.css">
 </head>
@@ -52,7 +62,7 @@
 				switch($this->uri->segment(1)){
 					case "jadwal":
 					if($this->uri->segment(2)=="input"){
-						echo "null";
+						include('input_jadwal.php');
 					}else{
 						include('jadwal.php');
 					}
@@ -105,6 +115,16 @@
 
 	<script type="text/javascript" src="<?php echo base_url();?>assets/plugins/datatable/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/datatable/dataTables.bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="<?php echo base_url();?>assets/plugins/date-picker/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/dateTime-picker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/customselect/jquery.customselect.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/select2/js/select2.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/lib/characterCounter.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/emojionearea/emojionearea.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/colorpicker/js/bootstrap-colorpicker.min.js"></script>
 	
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/app.base.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/cmp-todo.js"></script>

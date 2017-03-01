@@ -8,9 +8,10 @@
 				
 				<div class="col-md-12">
 				<h3><?php echo $this->session->flashdata('status_1') ?></h3>
-					<?php
-					if(count($kehadiran) == 0){?>
+					<?php if(count($kehadiran) == 0 && $this->session->userdata('status') == 3){ ?>
 						<a href="<?php echo base_url(); ?>index.php/kehadiran/absen"><button class="btn btn-warning">Absent</button></a>
+					<?php }else if(count($kehadiran) == 0 && count($kehadiran_karyawan) != 0 && $this->session->userdata('status') == 4){ ?>
+					<a href="<?php echo base_url(); ?>index.php/kehadiran/absen"><button class="btn btn-warning">Absent</button></a>
 					<?php }else{echo "<h3>Already Absent This Day.</h3>";} ?>
 					<?php if($this->session->userdata('status') == 3){ ?>
 					<table class="table table-bordered table-dataTable">

@@ -12,9 +12,12 @@ class kehadiran extends CI_Controller {
 	public function index(){
 		$data['kehadiran'] = $this->MyModel->select_attendante($this->session->userdata('iduser'))->result_array();
 		$data['kehadiran_admin'] = $this->MyModel->select_not_attendante()->result_array();
+		
+		$data['kehadiran_karyawan'] = $this->MyModel->select_attendante_employee($this->session->userdata('iduser'))->result_array();
 		$this->load->view('admin/index',array(
 		'kehadiran' => $data['kehadiran'],
-		'kehadiran_admin' => $data['kehadiran_admin']
+		'kehadiran_admin' => $data['kehadiran_admin'],
+		'kehadiran_karyawan' => $data['kehadiran_karyawan']
 		));
 	}
 	

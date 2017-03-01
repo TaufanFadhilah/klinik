@@ -15,8 +15,15 @@ class mymodel extends CI_Model {
 	}
 	
 	public function select_attendante($username){
-		return $this->db->query("Select DATE(date) from attendance where iduser = '$username'");
-		
+		date_default_timezone_set("Asia/Bangkok");
+		$date2 = DATE('Y-m-d');
+		return $this->db->query("Select date from attendance where iduser = '$username'  and DATE(date) = '$date2'");	
+	}
+	
+	public function select_attendante_employee($username){
+		date_default_timezone_set("Asia/Bangkok");
+		$date = DATE('Y-m-d');
+		return $this->db->query("Select DATE(reg_date) from registration where iduser = '$username' and reg_date = '$date'");	
 	}
 	
 	public function select_not_attendante(){
@@ -43,6 +50,17 @@ class mymodel extends CI_Model {
 		$this->db->join('user_detail', 'user_detail.iduser = registration.iduser');
 		return $this->db->get();
 	}
+	
+	public function select_jadwal(){
+		$this->db->select('*');
+		$this->db->from('schedule');
+		$this->db->join('registration', 'registration.idregistration = schedule.idregistration');
+		$this->db->join('patient', 'patient.idpatient = registration.idpatient');
+		$this->db->join('service', 'service.idservice = registration.idservice');
+		$this->db->join('user_detail', 'user_detail.iduser = registration.iduser');
+		return $this->db->get();
+	}
+	
 	public function insert($tableName, $data){
 		return $this->db->insert($tableName,$data);
 	}
