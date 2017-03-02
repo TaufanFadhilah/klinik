@@ -4,14 +4,14 @@
 		<div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="di di-welcome-write-blog"></i> Registrasi - <?php echo $this->session->flashdata('status'); ?></h3>
-                                <div class="tools">
-                                    <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>	                                
-                                </div>
+                                
                             </div>
                             <div class="panel-body">
                                 
                                 <div class="col-md-12">
+									<?php if($this->session->userdata('status') == 4){ ?>
 									<a href="<?php echo base_url(); ?>index.php/registrasi/input"><button class="btn btn-primary">Tambah Registrasi</button></a>
+									<?php }?>
                                     <br><br>
 									<table class="table table-bordered table-dataTable">
                                     <thead>
