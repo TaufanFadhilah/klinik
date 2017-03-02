@@ -102,7 +102,11 @@
 					break;
 					
 					case "patient":
-					include('patient.php');
+					if($this->uri->segment(2)=="input"){
+						include('input_patient.php');
+					}else{
+						include('patient.php');
+					}
 					break;
 					
 					case "ptkp":

@@ -18,6 +18,22 @@ class patient extends CI_Controller {
 		$data['patient'] = $this->MyModel->select_all('patient')->result_array();
 		$this->load->view('admin/patient_list',array('patient' => $data['patient']));
 	}
+
+	public function input(){
+		$this->load->view('admin/index');
+	}
+	
+	public function do_input(){
+		var_dump($_POST);
+		$this->MyModel->insert('patient',array(
+		'patientname' => $_POST['name'],
+		'gender' => $_POST['gender'],
+		'bod' => $_POST['birthday'],
+		'address' => $_POST['address'],
+		'phone' => $_POST['phone']
+		));
+		redirect(base_url().'index.php/patient');
+	}
 }
 
 ?>
