@@ -42,7 +42,12 @@
 		<?php include('header.php'); ?>
 		<!-- END : HEADER -->
         
-        <?php include('side_bar.php'); ?>
+        <?php if($this->session->userdata('status') != 3){
+				include('side_bar_user.php');
+			}else{
+				include('side_bar.php');
+			}
+		?>
         
         <div class="main-container">    <!-- START: Main Container -->
             

@@ -89,6 +89,15 @@ class mymodel extends CI_Model {
 		return $this->db->get();
 	}
 	
+	public function show_profile(){
+		$this->db->select('*');
+		$this->db->from('user_detail');
+		$this->db->join('user', 'user_detail.iduser = user.iduser');
+		$this->db->join('user_type', 'user.usertype = user_type.id_usertype');
+		$this->db->where('user_detail.iduser',$this->session->userdata('iduser'));
+		return $this->db->get();
+	}
+	
 	public function insert($tableName, $data){
 		return $this->db->insert($tableName,$data);
 	}

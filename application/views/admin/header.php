@@ -150,11 +150,7 @@
                             <div class="user-name"><?php echo $this->session->userdata('name'); ?> <small class="fa fa-angle-down"></small></div>
                         </a>
                         <ul class="dropdown-menu dropdown-animated pop-effect" role="menu">
-                            <li><a href="user-profile.html"><i class="sli-user"></i> My Profile</a></li>
-                            <li><a href="app-calendar.html"><i class="sli-calendar"></i> Calendar</a></li>
-                            <li><a href="msg-inbox.html"><i class="fa fa-envelope-o"></i> Inbox</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="page-faq.html"><i class="sli-question"></i> FAQ's</a></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/dashboard/update_profile"><i class="sli-user"></i> My Profile</a></li>
                             <li><a href="<?php echo base_url(); ?>index.php/dashboard/logout"><i class="sli-logout"></i> Logout</a></li>
                         </ul>
                     </li>

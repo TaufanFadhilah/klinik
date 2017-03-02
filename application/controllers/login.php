@@ -51,20 +51,10 @@ class login extends CI_Controller {
 		'phone' => $_POST['phone'],
 		'address' => $_POST['address'],
 		'photo' => $file_name['file_name'],
-		'npwp' => rand(),//$_POST['npwp'],
-		'idptkp' => "TK/0", //$_POST['ptkp'],
-		'idsalary_type' => 1 //$_POST['degree']
+		'npwp' => $_POST['npwp'],
+		'idptkp' => $_POST['ptkp'],
+		'idsalary_type' => $_POST['degree']
 		));
-			/* insert patient
-			$this->MyModel->insert('patient',array(
-			'name' => $_POST['name'],
-			'gender' => $_POST['gender'],
-			//'bod' =>
-			'address' => $_POST['address'],
-			'phone' => $_POST['phone']
-			));*/
-		
-		
 		$this->session->set_flashdata('status', 'Register Success');//flashdata
 		redirect(base_url().'index.php/login');
 	}
