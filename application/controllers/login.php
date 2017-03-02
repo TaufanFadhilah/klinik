@@ -33,13 +33,12 @@ class login extends CI_Controller {
 		$this->upload->do_upload('photo');
 		$file_name = $this->upload->data();
 		
-		if($_POST['status'] == "4"){
 			
 			//insert to tb_user
 		$this->MyModel->insert('user',array(
 		'username' => $_POST['username'],
 		'password' => md5($_POST['password']),
-		'usertype' => $_POST['status']
+		'usertype' => 4,//$_POST['status']
 		));
 		
 		$id = $this->MyModel->select_where('user',array('username' => $_POST['username']))->row();
@@ -56,15 +55,15 @@ class login extends CI_Controller {
 		'idptkp' => "TK/0", //$_POST['ptkp'],
 		'idsalary_type' => 1 //$_POST['degree']
 		));
-		}else{
+			/* insert patient
 			$this->MyModel->insert('patient',array(
 			'name' => $_POST['name'],
 			'gender' => $_POST['gender'],
 			//'bod' =>
 			'address' => $_POST['address'],
 			'phone' => $_POST['phone']
-			));
-		}
+			));*/
+		
 		
 		$this->session->set_flashdata('status', 'Register Success');//flashdata
 		redirect(base_url().'index.php/login');

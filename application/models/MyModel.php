@@ -61,6 +61,34 @@ class mymodel extends CI_Model {
 		return $this->db->get();
 	}
 	
+	public function select_gaji(){
+		$this->db->select('*');
+		$this->db->from('schedule');
+		$this->db->join('registration', 'schedule.idregistration = registration.idregistration');
+		$this->db->join('attendance', 'registration.iduser = attendance.iduser');
+		$this->db->join('user_detail', 'user_detail.iduser = registration.iduser');
+		$this->db->join('salary_type', 'user_detail.idsalary_type = salary_type.idsalary_type');
+		return $this->db->get();
+	}
+	public function select_honor($id){
+		$this->db->select('*');
+		$this->db->from('schedule');
+		$this->db->join('registration', 'schedule.idregistration = registration.idregistration');
+		$this->db->join('attendance', 'registration.iduser = attendance.iduser');
+		$this->db->join('user_detail', 'user_detail.iduser = registration.iduser');
+		$this->db->join('salary_type', 'user_detail.idsalary_type = salary_type.idsalary_type');
+		$this->db->where('registration.iduser',$id);
+		return $this->db->get();
+	}
+	
+	public function select_all_karyawan(){
+		$this->db->select('*');
+		$this->db->from('user_detail');
+		$this->db->join('ptkp', 'user_detail.idptkp = ptkp.idptkp');
+		$this->db->join('salary_type', 'user_detail.idsalary_type = salary_type.idsalary_type');
+		return $this->db->get();
+	}
+	
 	public function insert($tableName, $data){
 		return $this->db->insert($tableName,$data);
 	}

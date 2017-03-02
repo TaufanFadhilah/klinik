@@ -13,10 +13,10 @@
                         <div class="sub-menu collapse secondary" id="submenuMaster">
                             <ul>
                                 <li><a href="page-blank.html">Chart of Account</a></li>
-                                <li><a href="page-search.html">Data Karyawan</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/karyawan">Data Karyawan</a></li>
                                 <li><a href="page-404.html">Data Psikolog</a></li>
-                                <li><a href="page-500.html">Data Pasien</a></li>
-                                <li><a href="page-invoice.html">Data PTKP</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/patient/">Data Pasien</a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/ptkp/">Data PTKP</a></li>
                             </ul>
                         </div>
                     </li>
@@ -54,7 +54,7 @@
                     </li>
 					
 					<li>
-                        <a href="index.html">
+                        <a href="<?php echo base_url(); ?>index.php/gaji/">
 							<i class="di di-desktop"></i> <span class="nav-text">Penggajian</span>
 						</a>
                     </li>

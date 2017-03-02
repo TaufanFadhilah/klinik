@@ -83,6 +83,26 @@
 						include('kehadiran.php');
 					}
 					break;
+					
+					case "gaji":
+					if($this->uri->segment(2)=="detail"){
+						include('detail_gaji.php');
+					}else{
+						include('gaji.php');
+					}
+					break;
+					
+					case "karyawan":
+					include('karyawan.php');
+					break;
+					
+					case "patient":
+					include('patient.php');
+					break;
+					
+					case "ptkp":
+					include('ptkp.php');
+					break;
 				}
 				?>
                 

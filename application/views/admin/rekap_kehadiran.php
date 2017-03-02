@@ -16,6 +16,7 @@
                                             <th>ID Employee</th>
                                             <th>Name</th>
                                             <th>Date</th>
+											<th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -25,6 +26,7 @@
 											<td><?php echo $data['iduser'];?></td>
 											<td><?php echo $data['name'];?></td>
 											<td><?php echo $data['date'];?></td>
+											<td><?php echo $data['approve'];?></td>
 										</tr>
 										<?php } ?>
                                     </tbody>

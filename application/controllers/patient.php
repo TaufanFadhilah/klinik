@@ -9,6 +9,11 @@ class patient extends CI_Controller {
 		}
 	}
 	
+	public function index(){
+		$data['patient'] = $this->MyModel->select_all('patient')->result_array();
+		$this->load->view('admin/index',array('patient' => $data['patient']));
+	}
+	
 	public function patient_list(){
 		$data['patient'] = $this->MyModel->select_all('patient')->result_array();
 		$this->load->view('admin/patient_list',array('patient' => $data['patient']));
