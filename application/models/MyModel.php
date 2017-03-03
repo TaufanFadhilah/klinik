@@ -48,6 +48,7 @@ class mymodel extends CI_Model {
 		$this->db->join('patient', 'patient.idpatient = registration.idpatient');
 		$this->db->join('service', 'service.idservice = registration.idservice');
 		$this->db->join('user_detail', 'user_detail.iduser = registration.iduser');
+		$this->db->where('registration.iduser',$this->session->userdata('iduser'));
 		return $this->db->get();
 	}
 	

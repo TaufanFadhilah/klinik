@@ -10,7 +10,9 @@
                             <div class="panel-body">
                                 
                                 <div class="col-md-12">
+									<?php if($this->session->userdata('status') == 4){?>
 									<a href="<?php echo base_url(); ?>index.php/jadwal/input"><button class="btn btn-primary">Tambah Jadwal</button></a>
+									<?php } ?>
                                     <table class="table table-bordered table-dataTable">
                                     <thead>
                                         <tr>
