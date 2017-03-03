@@ -14,7 +14,8 @@
                                             <th>No.</th>
                                             <th>Employee Name</th>
                                             <th>Date</th>
-											<th>Detail</th>
+											<th>Salary</th>
+											<th>Total</th>
 											<!--
                                             <th>Honor/schedule</th>
                                             <th>Total Honor</th> -->
@@ -26,12 +27,15 @@
 										<tr>
 											<td><?php echo $no++; ?></td>
 											<td><?php echo $data['name']; ?></td>
-											<td><?php echo $data['reg_date']; ?></td>
-											<td><a href="<?php echo base_url() ?>index.php/gaji/detail/<?php echo $data['iduser'] ?>">
-											<button class="btn btn-primary">Detail</button></a></td>
-											<!--
-											<td><?php echo $data['nominal']; ?></td>
-											<td><?php echo $data['nominal']; ?></td> -->
+											<td><?php echo $data['bulan'].' - '.$data['tahun']; ?></td>
+											<td><?php echo "Rp " . number_format($data['nominal'],2,',','.');?></td>
+											<td><?php if($data['extra'] == 0){
+												$gaji = $data['total_hadir']*$data['nominal'];
+											}else{
+												echo "(BONUS) : ";
+												$gaji = $data['total_hadir']*$data['nominal']/10;
+											}
+											echo "Rp " . number_format($gaji,2,',','.');?></td>
 										</tr>
 										<?php } ?>
 										

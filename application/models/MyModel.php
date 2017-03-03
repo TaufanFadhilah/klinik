@@ -63,13 +63,14 @@ class mymodel extends CI_Model {
 	}
 	
 	public function select_gaji(){
-		$this->db->select('*');
+		/*$this->db->select('*');
 		$this->db->from('schedule');
 		$this->db->join('registration', 'schedule.idregistration = registration.idregistration');
 		$this->db->join('attendance', 'registration.iduser = attendance.iduser');
 		$this->db->join('user_detail', 'user_detail.iduser = registration.iduser');
 		$this->db->join('salary_type', 'user_detail.idsalary_type = salary_type.idsalary_type');
-		return $this->db->get();
+		return $this->db->get();*/
+		return $this->db->query("SELECT COUNT(schedule.idschdule) as total_hadir, user_detail.name, YEAR(schedule.date_time) as tahun, MONTH(schedule.date_time) as bulan, salary_type.nominal, schedule.extra FROM schedule JOIN registration ON schedule.idregistration = registration.idregistration JOIN attendance on registration.iduser = attendance.iduser JOIN user_detail ON registration.iduser = user_detail.iduser JOIN salary_type ON user_detail.idsalary_type = salary_type.idsalary_type WHERE attendance.approve = 1 GROUP BY registration.iduser, YEAR(schedule.date_time), MONTH(schedule.date_time), schedule.extra");
 	}
 	public function select_honor($id){
 		$this->db->select('*');
